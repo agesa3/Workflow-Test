@@ -23,7 +23,7 @@ jobs:
         with:
           appId: '1:1075187720587:android:1979e96d38ef5c8fe40f8e'
           token: '1//03Nfk__i4uumWCgYIARAAGAMSNwF-L9IrhOfRBJjT3V3r4ns-lQ9geS7geEYwez8F0p_g-gj8dF6a0uiuDNLpUGk8nYGsfVfn2_g'
-          group: internal
+          groups: internal
           file: app/build/outputs/apk/debug/app-debug.apk
 
   apk:
