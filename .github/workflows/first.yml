@@ -11,7 +11,7 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v3
         with:
-          distribution: openjdk11
+          distribution: corretto
           java-version: 11
 
 
