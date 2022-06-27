@@ -24,15 +24,21 @@ jobs:
       - name: Unit tests
         run: bash ./gradlew test --stacktrace
 
+
   deploy:
-    name: Deploying The App
-    uses: wzieba/Firebase-Distribution-Github-Action@v1
-    with:
-      appId: '1:1075187720587:android:1979e96d38ef5c8fe40f8e'
-      token: '1//03Nfk__i4uumWCgYIARAAGAMSNwF-L9IrhOfRBJjT3V3r4ns-lQ9geS7geEYwez8F0p_g-gj8dF6a0uiuDNLpUGk8nYGsfVfn2_g'
-      groups: internal
-      file: app/build/outputs/apk/debug/app-debug.apk
-      version: '1.0.0'
+    name: Upload apk to App Tester
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build Release
+        run: bash ./gradlew assembleDebug
+      - name: Upload artifact to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: '1:1075187720587:android:1979e96d38ef5c8fe40f8e'
+          token: '1//03Nfk__i4uumWCgYIARAAGAMSNwF-L9IrhOfRBJjT3V3r4ns-lQ9geS7geEYwez8F0p_g-gj8dF6a0uiuDNLpUGk8nYGsfVfn2_g'
+          groups: internal
+          file: app/build/outputs/apk/debug/app-debug.apk
 
   apk:
     name: Generate APK
