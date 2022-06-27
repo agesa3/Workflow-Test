@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Unit tests
-        run: bash ./gradlew test --stacktrace
+        run: ./gradlew assembleDebug
 
 
   deploy:
