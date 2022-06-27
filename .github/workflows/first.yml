@@ -31,7 +31,7 @@ jobs:
 
     steps:
       - name: Build Release
-        run: bash ./gradlew assembleDebug
+        run: ./gradlew assembleDebug
       - name: Upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
@@ -46,7 +46,7 @@ jobs:
 
     steps:
       - name: Build debug APK
-        run: bash ./gradlew assembleDebug --stacktrace
+        run: ./gradlew assembleDebug --stacktrace
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
