@@ -39,18 +39,7 @@ jobs:
           distribution: corretto
           java-version: 11
 
-      name: Upload apk to App Tester
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v3
-
-          - name: Setup JDK
-            uses: actions/setup-java@v3
-            with:
-              distribution: corretto
-              java-version: 11
-
-          - name: Upload apk to App Tester
+        - name: Upload apk to App Tester
             uses: wzieba/Firebase-Distribution-Github-Action@v1
             with:
               appId: '1:1075187720587:android:1979e96d38ef5c8fe40f8e'
