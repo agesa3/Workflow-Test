@@ -15,15 +15,18 @@ jobs:
           distribution: corretto
           java-version: 11
 
-
   test:
     name: Run Unit Tests
     runs-on: ubuntu-latest
 
     steps:
-      - name: Unit tests
-        run: ./gradlew assembleDebug
-
+      - name: Setup JDK
+      uses: actions/setup-java@v3
+      with:
+        distribution: corretto
+        java-version: 11
+        name: Unit tests
+        run: ./gradlew test
 
   deploy:
     name: Upload apk to App Tester
