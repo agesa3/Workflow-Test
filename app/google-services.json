@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1075187720587",
+    "project_id": "workflowtest-19a91",
+    "storage_bucket": "workflowtest-19a91.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075187720587:android:1979e96d38ef5c8fe40f8e",
+        "android_client_info": {
+          "package_name": "com.agesadev.githubworkflows"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075187720587-qsilt67fbss2birmkehiha21d1j2eeal.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj4U-dh4dcigk_zY8OWsjNtMF1KpUKqNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075187720587-qsilt67fbss2birmkehiha21d1j2eeal.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

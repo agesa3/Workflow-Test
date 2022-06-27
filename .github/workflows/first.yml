@@ -6,24 +6,45 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       - name: Setup JDK
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3
         with:
+          distribution: corretto
           java-version: 11
-
 
       - name: Run Tests
         run: ./gradlew test
       - name: Build Project
-        run: ./gradlew assemble
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v1
+        run: ./gradlew assembleDebug
+      - name: upload artifact to firebase distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
-          name: app-debug.apk
+          appId: '1:1075187720587:android:1979e96d38ef5c8fe40f8e'
+          token: '1//03Nfk__i4uumWCgYIARAAGAMSNwF-L9IrhOfRBJjT3V3r4ns-lQ9geS7geEYwez8F0p_g-gj8dF6a0uiuDNLpUGk8nYGsfVfn2_g'
+          groups: internal
+          file: app/build/outputs/apk/debug/app-debug.apk
+
+  apk:
+    name: Generate APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: 11
+          distribution: corretto
+      - name: Build debug APK
+        run: bash ./gradlew assembleDebug --stacktrace
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: app
           path: app/build/outputs/apk/debug/app-debug.apk
+
 
 
 
